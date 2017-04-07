@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budgie.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Budgie.Views
     public sealed partial class BudgieMain : Page
     {
         private int balanceEditControlVaraible;
+        private List<Transaction> transactions = new List<Transaction>();
 
         public BudgieMain()
         {
@@ -52,6 +54,33 @@ namespace Budgie.Views
             
         }
         
+        private void addLog(String transactionType, String transactionName, String transactionDesc, double transactionAmount)
+        { 
+            if(transactionName == "" && transactionDesc == "")
+            {
+                transactionName = "Not Set";
+                transactionDesc = "Not Set";
+            }
+            else if(transactionName == "")
+            {
+                transactionName = "Not Set";
+            }else if(transactionDesc == "")
+            {
+                transactionDesc = "Not Set";
+            }
+
+            Transaction transaction = new Transaction()
+            {
+                transactionType = transactionType,
+                trasnactionName = transactionName,
+                transactionDesc = transactionDesc,
+                transactionAmount = transactionAmount
+            };
+            transactions.Add(transaction);
+
+            test.Text = transactions[transactions.Count - 1].ToString();
+        }
+
         private void populateBalanceEdit(String editType)
         {
             dashboard.Visibility = Visibility.Collapsed;
@@ -59,13 +88,13 @@ namespace Budgie.Views
             backButton.Visibility = Visibility.Visible;
             if (editType == "Spend")
             {
-                balanceEditLabel.Text = "Enter Expense:";
+                balanceEditLabel.Text = "Transaction Expense Amount:";
                 balanceEditAction.Content = "Spend!";
                 balanceEditAction.Background = new SolidColorBrush(Colors.Red);
             }
             else
             {
-                balanceEditLabel.Text = "Enter Income:";
+                balanceEditLabel.Text = "Transaction Income Amount:";
                 balanceEditAction.Content = "Save!";
                 balanceEditAction.Background = new SolidColorBrush(Colors.Green);
             }
@@ -85,29 +114,32 @@ namespace Budgie.Views
 
         private void balanceEditAction_Click(object sender, RoutedEventArgs e)
         {
+            String transactionType;
             try
             {
                 if (balanceEditControlVaraible == 1)
                 {
                     App.balance = App.balance - (double.Parse(balanceEditTextBox.Text));
                     loadBalance();
-                    balanceEditControlVaraible = 0;
+                    transactionType = "Expense";
                 }
                 else
                 {
                     App.balance = App.balance + (double.Parse(balanceEditTextBox.Text));
                     loadBalance();
-                    balanceEditControlVaraible = 0;
+                    transactionType = "Income";
                 }
 
+                addLog(transactionType, balanceEditNameBox.Text, balanceEditDescBox.Text, double.Parse(balanceEditTextBox.Text));
                 balanceEditTextBox.Text = "";
                 dashboard.Visibility = Visibility.Visible;
                 balanceEdit.Visibility = Visibility.Collapsed;
                 backButton.Visibility = Visibility.Collapsed;
+                balanceEditControlVaraible = 0;
             }
             catch
             {
-                errorMessage.Text = "Not a double value!";
+                errorMessage.Text = "Please enter a number value";
             }
         }
 

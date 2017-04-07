@@ -39,7 +39,9 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Budgie.MainPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="PlaceholderText" />
+    </RootType>
     <RootType FullName="Budgie.Views.BudgieInitial" />
     <RootType FullName="Budgie.Views.BudgieMain" />
   </Roots.RootTypes>

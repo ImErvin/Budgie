@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Budgie.Views.BudgieMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Budgie.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' x:Name="backButton" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Padding="3" Background="#e5d665"                         >Back</Button>
+        <StackPanel x:ConnectionId='2' x:Name="Header"  VerticalAlignment="Top">
+            <Image Source="../assets/Logo3.png" Height="80" Width="85"></Image>
+            <TextBlock HorizontalAlignment="Center">Your Balance</TextBlock>
+            <TextBlock x:ConnectionId='16' x:Name="yourBalance" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <StackPanel x:ConnectionId='3' x:Name="dashboard" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:ConnectionId='14' x:Name="newExpense" Background="#e8465a"                         >New Expense</Button>
+                <Button x:ConnectionId='15' x:Name="newIncome" Background="#77ce6f"                        >New Income</Button>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock x:ConnectionId='13' x:Name="test"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:ConnectionId='4' x:Name="balanceEdit" VerticalAlignment="Center" Margin="15,0,15,0" HorizontalAlignment="Stretch">
+            <TextBlock x:ConnectionId='5' x:Name="errorMessage"></TextBlock>
+            <TextBlock x:ConnectionId='6' x:Name="balanceEditLabel"></TextBlock>
+            <TextBox x:ConnectionId='7' x:Name="balanceEditTextBox"></TextBox>
+            <TextBlock x:ConnectionId='8' x:Name="balanceEditName">Transaction Name:</TextBlock>
+            <TextBox x:ConnectionId='9' x:Name="balanceEditNameBox" PlaceholderText="Optional"></TextBox>
+            <TextBlock x:ConnectionId='10' x:Name="balanceEditDesc">Transaction Description:</TextBlock>
+            <TextBox x:ConnectionId='11' x:Name="balanceEditDescBox" PlaceholderText="Optional"></TextBox>
+            <Button x:ConnectionId='12' x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0"                                ></Button>
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>
+
