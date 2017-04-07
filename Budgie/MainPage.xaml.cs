@@ -26,5 +26,21 @@ namespace Budgie
         {
             this.InitializeComponent();
         }
+
+        private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
+        {
+            double balance = 0;
+            try
+            {
+                balance = double.Parse(welcomeBalance.Text);
+                yourBalance.Text = "" + balance;
+
+            }
+            catch
+            {
+                errorMessage.Text = "Not a double value!";
+            }
+            
+        }
     }
 }

@@ -8,6 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel x:Name="Header"  VerticalAlignment="Top">
+            <Image Source="assets/Logo3.png" Height="80" Width="85"></Image>
+            <TextBlock HorizontalAlignment="Center">Your Balance</TextBlock>
+            <TextBlock x:Name="yourBalance" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="WelcomePage" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="errorMessage"></TextBlock>
+            <TextBlock>Enter your current balance</TextBlock>
+            <TextBox x:Name="welcomeBalance" ></TextBox>
+            <Button x:Name="welcomeSaveBalance" Click="welcomeSaveBalance_Click">Save!</Button>
+        </StackPanel>
+        <!--<StackPanel x:Name="mainPage" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="">
+            <Button Click="welcomeSaveBalance_Click">Save!</Button>
+        </StackPanel>-->
     </Grid>
 </Page>
