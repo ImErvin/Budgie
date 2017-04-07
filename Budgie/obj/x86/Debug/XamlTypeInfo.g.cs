@@ -132,15 +132,19 @@ namespace Budgie.Budgie_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[5];
             _typeNameTable[0] = "Budgie.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "Budgie.Views.BudgieInitial";
+            _typeNameTable[4] = "Budgie.Views.BudgieMain";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::Budgie.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::Budgie.Views.BudgieInitial);
+            _typeTable[4] = typeof(global::Budgie.Views.BudgieMain);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -176,6 +180,8 @@ namespace Budgie.Budgie_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::Budgie.MainPage(); }
+        private object Activate_3_BudgieInitial() { return new global::Budgie.Views.BudgieInitial(); }
+        private object Activate_4_BudgieMain() { return new global::Budgie.Views.BudgieMain(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -200,6 +206,20 @@ namespace Budgie.Budgie_XamlTypeInfo
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Budgie.Budgie_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Budgie.Views.BudgieInitial
+                userType = new global::Budgie.Budgie_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_BudgieInitial;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Budgie.Views.BudgieMain
+                userType = new global::Budgie.Budgie_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_BudgieMain;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;

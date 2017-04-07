@@ -190,3 +190,13 @@ C:\Users\Ervii\OneDrive\Documents\Visual Studio 2015\Projects\Budgie\Budgie\obj\
 C:\Users\Ervii\OneDrive\Documents\Visual Studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Ervii\OneDrive\Documents\Visual Studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Ervii\OneDrive\Documents\Visual Studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieInitial.g.i.cs
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieInitial.g.cs
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieMain.g.i.cs
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieMain.g.cs
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieInitial.xaml
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieMain.xaml
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieInitial.xbf
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\Views\BudgieMain.xbf
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Views\BudgieInitial.xbf
+C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Views\BudgieMain.xbf
