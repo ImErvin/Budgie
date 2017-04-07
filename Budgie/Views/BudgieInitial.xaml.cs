@@ -29,11 +29,12 @@ namespace Budgie.Views
 
         private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
         {
-            double balance = 0;
             try
             {
-                balance = double.Parse(welcomeBalance.Text);
-                yourBalance.Text = "" + balance;
+                App.balance = double.Parse(welcomeBalance.Text);
+                yourBalance.Text = "" + App.balance;
+
+                this.Frame.Navigate(typeof(BudgieMain));
             }
             catch
             {

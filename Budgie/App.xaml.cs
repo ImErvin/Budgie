@@ -22,12 +22,25 @@ namespace Budgie
     /// </summary>
     sealed partial class App : Application
     {
+        public static double balance;
+
+        /*public static double getBalance()
+        {
+            return balance;
+        }
+
+        public static void setBalance(double balance)
+        {
+            this.balance = balance;
+        }*/
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
+            
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

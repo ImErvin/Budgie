@@ -25,6 +25,12 @@ namespace Budgie.Views
         public BudgieMain()
         {
             this.InitializeComponent();
+            this.loadBalance();
+        }
+
+        public void loadBalance()
+        {
+            yourBalance.Text = "" + App.balance;
         }
     }
 }
