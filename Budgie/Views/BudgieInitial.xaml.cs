@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +27,12 @@ namespace Budgie.Views
         public BudgieInitial()
         {
             this.InitializeComponent();
+            this.loadBalance();
+        }
+
+        private void loadBalance()
+        {
+            yourBalance.Text = "" + App.balance;
         }
 
         private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)

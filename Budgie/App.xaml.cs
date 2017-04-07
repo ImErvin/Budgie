@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
@@ -22,7 +23,7 @@ namespace Budgie
     /// </summary>
     sealed partial class App : Application
     {
-        public static double balance;
+        public static double balance = 0.00;
 
         /*public static double getBalance()
         {

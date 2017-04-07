@@ -8,13 +8,28 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="backButton" VerticalAlignment="Bottom" Padding="3" Background="#e5d665" Click="backButton_Click">Back</Button>
         <StackPanel x:Name="Header"  VerticalAlignment="Top">
             <Image Source="../assets/Logo3.png" Height="80" Width="85"></Image>
             <TextBlock HorizontalAlignment="Center">Your Balance</TextBlock>
             <TextBlock x:Name="yourBalance" HorizontalAlignment="Center"></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="mainPage" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock>This is the main page welcome!</TextBlock>
+        <StackPanel x:Name="dashboard" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="newExpense" Background="#e8465a" Click="newExpense_Click">New Expense</Button>
+                <Button x:Name="newIncome" Background="#77ce6f" Click="newIncome_Click">New Income</Button>
+            </StackPanel>
         </StackPanel>
+        <StackPanel x:Name="balanceEdit" VerticalAlignment="Center" Margin="15,0,15,0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="errorMessage"></TextBlock>
+            <TextBlock x:Name="balanceEditLabel"></TextBlock>
+            <TextBox x:Name="balanceEditTextBox"></TextBox>
+            <Button x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="balanceEditAction_Click"></Button>
+        </StackPanel>
+        <!--<StackPanel x:Name="income" VerticalAlignment="Center" Margin="15,0,15,0" HorizontalAlignment="Stretch">
+            <TextBlock >Enter Income:</TextBlock>
+            <TextBox x:Name="incomeBox"></TextBox>
+            <Button x:Name="save" HorizontalAlignment="Stretch" Margin="0,5,0,0" Background="#77ce6f" Click="save_Click">Save</Button>
+        </StackPanel>-->
     </Grid>
 </Page>

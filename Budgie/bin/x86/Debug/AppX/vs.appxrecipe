@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T19:00:59.514</Modified>
+      <Modified>2017-04-07T21:51:30.281</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.exe">
       <PackagePath>entrypoint\Budgie.exe</PackagePath>
-      <Modified>2017-04-07T19:00:58.638</Modified>
+      <Modified>2017-04-07T21:51:28.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -504,7 +504,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.xr.xml">
       <PackagePath>Budgie.xr.xml</PackagePath>
-      <Modified>2017-04-07T18:40:00.187</Modified>
+      <Modified>2017-04-07T21:51:27.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -513,11 +513,11 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T18:42:44.860</Modified>
+      <Modified>2017-04-07T21:51:29.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\Budgie.exe">
       <PackagePath>Budgie.exe</PackagePath>
-      <Modified>2017-04-07T19:00:59.488</Modified>
+      <Modified>2017-04-07T21:51:30.263</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
