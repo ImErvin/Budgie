@@ -12,10 +12,11 @@ namespace Budgie.Model
         public String trasnactionName { get; set; }
         public String transactionDesc { get; set; }
         public double transactionAmount { get; set; }
+        public DateTime transactionDate { get; set; }
 
         public override string ToString()
         {
-            return "Type: " + transactionType + "\nName: " + trasnactionName + "\nDesc: " + transactionDesc + "\nAmount: " + transactionAmount;
+            return "Type: " + transactionType + "\nAmount: " + transactionAmount + "\nName: " + trasnactionName + "\nDesc: " + transactionDesc + "\nDate: " + transactionDate;
         }
     }
 }

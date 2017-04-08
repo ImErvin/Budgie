@@ -12,26 +12,29 @@
         <StackPanel x:ConnectionId='2' x:Name="Header"  VerticalAlignment="Top">
             <Image Source="../assets/Logo3.png" Height="80" Width="85"></Image>
             <TextBlock HorizontalAlignment="Center">Your Balance</TextBlock>
-            <TextBlock x:ConnectionId='16' x:Name="yourBalance" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock x:ConnectionId='17' x:Name="yourBalance" HorizontalAlignment="Center"></TextBlock>
         </StackPanel>
         <StackPanel x:ConnectionId='3' x:Name="dashboard" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:ConnectionId='14' x:Name="newExpense" Background="#e8465a"                         >New Expense</Button>
-                <Button x:ConnectionId='15' x:Name="newIncome" Background="#77ce6f"                        >New Income</Button>
+                <Button x:ConnectionId='15' x:Name="newExpense" Background="#e8465a"                         >New Expense</Button>
+                <Button x:ConnectionId='16' x:Name="newIncome" Background="#77ce6f"                        >New Income</Button>
             </StackPanel>
-            <StackPanel>
-                <TextBlock x:ConnectionId='13' x:Name="test"></TextBlock>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Button x:ConnectionId='14' x:Name="openLogs" Background="#e5d665" Width="211"                       >Transactions</Button>
             </StackPanel>
         </StackPanel>
-        <StackPanel x:ConnectionId='4' x:Name="balanceEdit" VerticalAlignment="Center" Margin="15,0,15,0" HorizontalAlignment="Stretch">
-            <TextBlock x:ConnectionId='5' x:Name="errorMessage"></TextBlock>
-            <TextBlock x:ConnectionId='6' x:Name="balanceEditLabel"></TextBlock>
-            <TextBox x:ConnectionId='7' x:Name="balanceEditTextBox"></TextBox>
-            <TextBlock x:ConnectionId='8' x:Name="balanceEditName">Transaction Name:</TextBlock>
-            <TextBox x:ConnectionId='9' x:Name="balanceEditNameBox" PlaceholderText="Optional"></TextBox>
-            <TextBlock x:ConnectionId='10' x:Name="balanceEditDesc">Transaction Description:</TextBlock>
-            <TextBox x:ConnectionId='11' x:Name="balanceEditDescBox" PlaceholderText="Optional"></TextBox>
-            <Button x:ConnectionId='12' x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0"                                ></Button>
+        <ListView x:ConnectionId='4' x:Name="logs" Margin="0,140,0,31" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="Auto" ItemsSource="{Binding}">
+
+        </ListView>
+        <StackPanel x:ConnectionId='5' x:Name="balanceEdit" VerticalAlignment="Center" Margin="15,0,15,0" HorizontalAlignment="Stretch">
+            <TextBlock x:ConnectionId='6' x:Name="errorMessage"></TextBlock>
+            <TextBlock x:ConnectionId='7' x:Name="balanceEditLabel"></TextBlock>
+            <TextBox x:ConnectionId='8' x:Name="balanceEditTextBox"></TextBox>
+            <TextBlock x:ConnectionId='9' x:Name="balanceEditName">Transaction Name:</TextBlock>
+            <TextBox x:ConnectionId='10' x:Name="balanceEditNameBox" PlaceholderText="Optional"></TextBox>
+            <TextBlock x:ConnectionId='11' x:Name="balanceEditDesc">Transaction Description:</TextBlock>
+            <TextBox x:ConnectionId='12' x:Name="balanceEditDescBox" PlaceholderText="Optional"></TextBox>
+            <Button x:ConnectionId='13' x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0"                                ></Button>
         </StackPanel>
         
         

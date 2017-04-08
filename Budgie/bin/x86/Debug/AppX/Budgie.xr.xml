@@ -43,6 +43,14 @@
       <RootProperty Name="PlaceholderText" />
     </RootType>
     <RootType FullName="Budgie.Views.BudgieInitial" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="ItemsSource" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Budgie.Views.BudgieMain" />
   </Roots.RootTypes>
 </Roots>
