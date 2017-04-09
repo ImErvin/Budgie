@@ -7,6 +7,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -35,12 +37,28 @@ namespace Budgie.Views
             yourBalance.Text = "" + App.balance;
         }
 
-        private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
+        private async void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
         {
+            StorageFolder localStorageFolder = ApplicationData.Current.LocalFolder;
+            StorageFile budgetFile;
+
             try
             {
                 App.balance = double.Parse(welcomeBalance.Text);
                 yourBalance.Text = "" + App.balance;
+
+                try
+                {
+                    budgetFile = await localStorageFolder.CreateFileAsync("budget.txt");
+                    await Windows.Storage.FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
+                }
+                catch(Exception error)
+                {
+                    await new MessageDialog(error.Message).ShowAsync();
+                }
+                
+
+                
 
                 this.Frame.Navigate(typeof(BudgieMain));
             }

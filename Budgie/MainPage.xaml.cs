@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.IO.IsolatedStorage;
+using Windows.Storage;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,28 +30,29 @@ namespace Budgie
         public MainPage()
         {
             this.InitializeComponent();
+            this.checkLocalStorage();
         }
 
         private void letStart_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BudgieInitial));
         }
-
-        /*private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
+        
+        private async void checkLocalStorage()
         {
-            double balance = 0;
+            StorageFolder localStorageFolder = ApplicationData.Current.LocalFolder;
+            StorageFile budgetFile;
+
             try
             {
-                balance = double.Parse(welcomeBalance.Text);
-                yourBalance.Text = "" + balance;
-                welcomePage.Visibility = Visibility.Collapsed;
-                mainPage.Visibility = Visibility.Visible;
+                budgetFile = await localStorageFolder.GetFileAsync("budget.txt");
+                
+                this.Frame.Navigate(typeof(BudgieMain));
             }
             catch
             {
-                errorMessage.Text = "Not a double value!";
+                await new MessageDialog("Not Found").ShowAsync();
             }
-            
-        }*/
+        }
     }
 }

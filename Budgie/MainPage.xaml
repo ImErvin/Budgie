@@ -11,7 +11,7 @@
         <StackPanel x:Name="Header"  VerticalAlignment="Center">
             <Image Source="assets/Logo3.png" Height="80" Width="85"></Image>
             <TextBlock x:Name="welcomeMessage" HorizontalAlignment="Center">Budgie - Keep a track of your budget!</TextBlock>
-            <Button x:Name="letStart" HorizontalAlignment="Stretch" Margin="15,5,15,0" Background="#77ce6f" Click="letStart_Click">Let's start!</Button>
+            <Button x:Name="letStart" HorizontalAlignment="Stretch" Margin="15,5,15,0" Background="#77ce6f" Tapped="letStart_Click">Let's start!</Button>
         </StackPanel>
     </Grid>
 </Page>
