@@ -6,7 +6,9 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,7 +32,7 @@ namespace Budgie.Views
         public BudgieMain()
         {
             this.InitializeComponent();
-            this.loadBalance();
+            this.loadBalanceFromStorage();
             this.loadPage();
         }
 
@@ -41,8 +43,25 @@ namespace Budgie.Views
             logs.Visibility = Visibility.Collapsed;
         }
 
+        private async void loadBalanceFromStorage()
+        {
+            StorageFile budgetFile;
+
+            try
+            {
+                budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
+                App.balance = double.Parse(await Windows.Storage.FileIO.ReadTextAsync(budgetFile));
+                this.loadBalance();
+            }
+            catch (Exception E)
+            {
+                await new MessageDialog(E.Message).ShowAsync();
+            }
+        }
+
         private void loadBalance()
         {
+
             yourBalance.Text = "" + App.balance;
             if (App.balance > 0)
             {

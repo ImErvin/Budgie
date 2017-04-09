@@ -40,19 +40,42 @@ namespace Budgie
         
         private async void checkLocalStorage()
         {
-            StorageFolder localStorageFolder = ApplicationData.Current.LocalFolder;
+            List<string> welcomes = new List<string>();
+            welcomes.Add("Polly wants a cracker!");
+            welcomes.Add("Quak! Oh it's you again..");
+            welcomes.Add("You're spending too much money!");
+            welcomes.Add("Welcome back");
             StorageFile budgetFile;
 
             try
             {
-                budgetFile = await localStorageFolder.GetFileAsync("budget.txt");
-                
-                this.Frame.Navigate(typeof(BudgieMain));
+                budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
+
+                if (budgetFile.FileType == ".txt")
+                {
+                    letStart.Visibility = Visibility.Collapsed;
+                    continueButton.Visibility = Visibility.Visible;
+                    Random random = new Random();
+                    int randomNumber = random.Next(0, 3);
+
+                    welcomeMessage.Text = welcomes[randomNumber];
+                    return;
+                }
+                else
+                {
+                    return;
+                }
             }
             catch
             {
-                await new MessageDialog("Not Found").ShowAsync();
+
             }
+
+        }
+
+        private void continueButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BudgieMain));
         }
     }
 }

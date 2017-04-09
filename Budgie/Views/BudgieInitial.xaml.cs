@@ -39,8 +39,6 @@ namespace Budgie.Views
 
         private async void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder localStorageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile budgetFile;
 
             try
             {
@@ -49,10 +47,9 @@ namespace Budgie.Views
 
                 try
                 {
-                    budgetFile = await localStorageFolder.CreateFileAsync("budget.txt");
-                    await Windows.Storage.FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
-                }
-                catch(Exception error)
+                    var budgetFile = await App.localStorageFolder.CreateFileAsync("budget.txt");
+                    await FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
+                }catch(Exception error)
                 {
                     await new MessageDialog(error.Message).ShowAsync();
                 }
@@ -64,7 +61,7 @@ namespace Budgie.Views
             }
             catch
             {
-                errorMessage.Text = "Not a double value!";
+                errorMessage.Text = "Quak.. '" + welcomeBalance.Text + "' is not a number.";
             }
         }
     }
