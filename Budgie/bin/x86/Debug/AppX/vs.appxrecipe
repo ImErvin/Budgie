@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T00:09:35.612</Modified>
+      <Modified>2017-04-11T01:08:12.247</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.exe">
       <PackagePath>entrypoint\Budgie.exe</PackagePath>
-      <Modified>2017-04-11T00:09:34.754</Modified>
+      <Modified>2017-04-11T01:08:11.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -517,7 +517,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\Budgie.exe">
       <PackagePath>Budgie.exe</PackagePath>
-      <Modified>2017-04-11T00:09:35.595</Modified>
+      <Modified>2017-04-11T01:08:12.233</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -41,69 +41,11 @@ namespace Budgie
         
         private async void checkLocalStorage()
         {
-            StorageFile budgetFile;
-            StorageFile transactionsFile;
+            
 
             try
             {
-                transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
-                var buffer = await FileIO.ReadLinesAsync(transactionsFile);
-                Transaction transaction = new Transaction();
-                int inc = 0;
-
-                for (int i = 0; i <= buffer.Count - 1; i++)
-                {
-
-                    if (inc == 0)
-                    {
-                        transaction.transactionType = "" + buffer[i];
-
-                        inc++;
-                    }
-                    else if (inc == 1)
-                    {
-                        transaction.transactionAmount = double.Parse(buffer[i]);
-
-                        inc++;
-                    }
-                    else if (inc == 2)
-                    {
-                        transaction.transactionName = "" + buffer[i];
-
-                        inc++;
-                    }
-                    else if (inc == 3)
-                    {
-                        transaction.transactionDesc = "" + buffer[i];
-
-                        inc++;
-                    }
-                    else if (inc == 4)
-                    {
-                        transaction.transactionDate = DateTime.Parse(buffer[i]);
-
-                        inc++;
-                    }
-                    else if (inc == 5)
-                    {
-
-                        BudgieMain.transactions.Add(transaction);
-                        inc = 0;
-                        await new MessageDialog("" + transaction.transactionAmount).ShowAsync();
-                    }
-                }
-
-            }
-            catch (Exception E)
-            {
-
-            }
-
-
-
-            try
-            {
-                budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
+                var budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
 
                 if (budgetFile.FileType == ".txt")
                 {

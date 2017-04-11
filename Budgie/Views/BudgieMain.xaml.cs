@@ -27,14 +27,76 @@ namespace Budgie.Views
     public sealed partial class BudgieMain : Page
     {
         private int balanceEditControlVaraible;
-        public static List<Transaction> transactions = new List<Transaction>();
+        private static List<Transaction> transactions = new List<Transaction>();
 
         public BudgieMain()
         {
+            
+
             this.InitializeComponent();
             //this.loadBalanceFromStorage();
+            this.loadLogs();
             this.loadBalance();
             this.loadPage();
+        }
+
+        private async void loadLogs()
+        {
+            StorageFile transactionsFile;
+
+            try
+            {
+                transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
+                var buffer = await FileIO.ReadLinesAsync(transactionsFile);
+                Transaction transaction = new Transaction();
+                int lineNo = 0;
+
+                for (int i = 0; i <= buffer.Count - 1; i++)
+                {
+
+                    if (lineNo == 0)
+                    {
+                        transaction.transactionType = "" + buffer[i];
+
+                        lineNo++;
+                    }
+                    else if (lineNo == 1)
+                    {
+                        transaction.transactionAmount = double.Parse(buffer[i]);
+
+                        lineNo++;
+                    }
+                    else if (lineNo == 2)
+                    {
+                        transaction.transactionName = "" + buffer[i];
+
+                        lineNo++;
+                    }
+                    else if (lineNo == 3)
+                    {
+                        transaction.transactionDesc = "" + buffer[i];
+
+                        lineNo++;
+                    }
+                    else if (lineNo == 4)
+                    {
+                        transaction.transactionDate = DateTime.Parse(buffer[i]);
+
+                        lineNo++;
+                    }
+                    else if (lineNo == 5)
+                    {
+                        transactions.Add(transaction);
+                        transaction = new Transaction();
+                        lineNo = 0;
+                    }
+                }
+
+            }
+            catch (Exception E)
+            {
+
+            }
         }
 
         private void loadPage()
@@ -47,6 +109,8 @@ namespace Budgie.Views
         private async void loadBalanceFromStorage()
         {
             StorageFile budgetFile;
+
+            
 
             try
             {
@@ -62,7 +126,6 @@ namespace Budgie.Views
 
         private void loadBalance()
         {
-
             yourBalance.Text = "" + App.balance;
             if (App.balance > 0)
             {
@@ -75,7 +138,7 @@ namespace Budgie.Views
             showLogs();
         }
 
-        private async void showLogs()
+        private void showLogs()
         {
             //List<string> log = new List<string>();
             List<string> logList = new List<string>();
@@ -83,7 +146,6 @@ namespace Budgie.Views
             foreach (var transaction in transactions)
             {
                 logList.Add(transaction.ToString());
-
             }
 
             logList.Reverse();
@@ -125,7 +187,6 @@ namespace Budgie.Views
 
                 foreach (Transaction log in transactions)
                 {
-                    await new MessageDialog("" + log.transactionAmount).ShowAsync();
                     await FileIO.AppendTextAsync(transactionsFile, log.ToFile());
                 }
             }
