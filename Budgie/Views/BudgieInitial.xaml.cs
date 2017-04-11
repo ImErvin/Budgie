@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.SpeechSynthesis;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -49,7 +50,8 @@ namespace Budgie.Views
                 {
                     var budgetFile = await App.localStorageFolder.CreateFileAsync("budget.txt");
                     await FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
-                }catch(Exception error)
+                }
+                catch (Exception error)
                 {
                     await new MessageDialog(error.Message).ShowAsync();
                 }
@@ -58,7 +60,15 @@ namespace Budgie.Views
             }
             catch
             {
-                errorMessage.Text = "Quak.. '" + welcomeBalance.Text + "' is not a number.";
+                MediaElement mediaElement = new MediaElement();
+                var synth = new SpeechSynthesizer();
+                string error = "Quak.. '" + welcomeBalance.Text + "' is not a number.";
+
+                errorMessage.Text = error;
+
+                SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(error);
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();
             }
         }
     }

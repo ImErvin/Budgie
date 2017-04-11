@@ -4,6 +4,8 @@ using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Budgie.Views;
+using Budgie.Model;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -17,6 +19,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Devices.Geolocation;
 
 namespace Budgie
 {
@@ -114,18 +117,8 @@ namespace Budgie
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private async void OnSuspending(object sender, SuspendingEventArgs e)
+        private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            try
-            {
-                var budgetFile = await localStorageFolder.GetFileAsync("budget.txt");
-                await FileIO.WriteTextAsync(budgetFile, "" + balance);
-            }
-            catch (Exception error)
-            {
-                
-            }
-
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();

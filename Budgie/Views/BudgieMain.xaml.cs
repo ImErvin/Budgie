@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Devices.Geolocation;
 using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Popups;
@@ -16,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Media.SpeechSynthesis;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,76 +29,13 @@ namespace Budgie.Views
     public sealed partial class BudgieMain : Page
     {
         private int balanceEditControlVaraible;
-        private static List<Transaction> transactions = new List<Transaction>();
+        public static List<Transaction> transactions = new List<Transaction>();
 
         public BudgieMain()
         {
-            
-
             this.InitializeComponent();
-            //this.loadBalanceFromStorage();
-            this.loadLogs();
             this.loadBalance();
             this.loadPage();
-        }
-
-        private async void loadLogs()
-        {
-            StorageFile transactionsFile;
-
-            try
-            {
-                transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
-                var buffer = await FileIO.ReadLinesAsync(transactionsFile);
-                Transaction transaction = new Transaction();
-                int lineNo = 0;
-
-                for (int i = 0; i <= buffer.Count - 1; i++)
-                {
-
-                    if (lineNo == 0)
-                    {
-                        transaction.transactionType = "" + buffer[i];
-
-                        lineNo++;
-                    }
-                    else if (lineNo == 1)
-                    {
-                        transaction.transactionAmount = double.Parse(buffer[i]);
-
-                        lineNo++;
-                    }
-                    else if (lineNo == 2)
-                    {
-                        transaction.transactionName = "" + buffer[i];
-
-                        lineNo++;
-                    }
-                    else if (lineNo == 3)
-                    {
-                        transaction.transactionDesc = "" + buffer[i];
-
-                        lineNo++;
-                    }
-                    else if (lineNo == 4)
-                    {
-                        transaction.transactionDate = DateTime.Parse(buffer[i]);
-
-                        lineNo++;
-                    }
-                    else if (lineNo == 5)
-                    {
-                        transactions.Add(transaction);
-                        transaction = new Transaction();
-                        lineNo = 0;
-                    }
-                }
-
-            }
-            catch (Exception E)
-            {
-
-            }
         }
 
         private void loadPage()
@@ -104,24 +43,6 @@ namespace Budgie.Views
             balanceEdit.Visibility = Visibility.Collapsed;
             backButton.Visibility = Visibility.Collapsed;
             logs.Visibility = Visibility.Collapsed;
-        }
-
-        private async void loadBalanceFromStorage()
-        {
-            StorageFile budgetFile;
-
-            
-
-            try
-            {
-                budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
-                App.balance = double.Parse(await Windows.Storage.FileIO.ReadTextAsync(budgetFile));
-                this.loadBalance();
-            }
-            catch (Exception E)
-            {
-                await new MessageDialog(E.Message).ShowAsync();
-            }
         }
 
         private void loadBalance()
@@ -140,7 +61,6 @@ namespace Budgie.Views
 
         private void showLogs()
         {
-            //List<string> log = new List<string>();
             List<string> logList = new List<string>();
 
             foreach (var transaction in transactions)
@@ -238,7 +158,7 @@ namespace Budgie.Views
             balanceEditControlVaraible = 2;
         }
 
-        private void balanceEditAction_Click(object sender, RoutedEventArgs e)
+        private async void balanceEditAction_Click(object sender, RoutedEventArgs e)
         {
             String transactionType;
             try
@@ -254,6 +174,16 @@ namespace Budgie.Views
                     transactionType = "Income";
                 }
 
+                try
+                {
+                    var budgetFile = await App.localStorageFolder.GetFileAsync("budget.txt");
+                    await FileIO.WriteTextAsync(budgetFile, "" + App.balance);
+                }
+                catch (Exception error)
+                {
+
+                }
+
                 addLog(transactionType, balanceEditNameBox.Text, balanceEditDescBox.Text, double.Parse(balanceEditTextBox.Text));
                 balanceEditTextBox.Text = "";
                 dashboard.Visibility = Visibility.Visible;
@@ -264,7 +194,15 @@ namespace Budgie.Views
             }
             catch
             {
-                errorMessage.Text = "Quak.. '" + balanceEditTextBox.Text + "' is not a number."; ;
+                MediaElement mediaElement = new MediaElement();
+                var synth = new SpeechSynthesizer();
+                string error = "Quak.. '" + balanceEditTextBox.Text + "' is not a number.";
+
+                errorMessage.Text = error;
+
+                SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(error);
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();
             }
         }
 

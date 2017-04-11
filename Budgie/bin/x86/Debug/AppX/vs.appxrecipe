@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>2E27A294E7C74223FB38F87611DA2BEB7BA995292D8284C60967A3F47E670F9A</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7D1D71B119E917A3263486A87F01666A9F6BEE58E40962A551DB067B9AFB2131</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>ec2431b0-77b0-42d2-8267-30f37dd603ff_1.0.0.0_x86__tmv6z44nw3k10</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>ec2431b0-77b0-42d2-8267-30f37dd603ff_tmv6z44nw3k10!App</RegisteredUserModeAppID>
     <RegisteredPackageID>ec2431b0-77b0-42d2-8267-30f37dd603ff</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T01:08:12.247</Modified>
+      <Modified>2017-04-11T16:30:35.603</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.exe">
       <PackagePath>entrypoint\Budgie.exe</PackagePath>
-      <Modified>2017-04-11T01:08:11.525</Modified>
+      <Modified>2017-04-11T16:30:34.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,6 +448,94 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T22:11:12.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\100x100.png">
+      <PackagePath>Assets\100x100.png</PackagePath>
+      <Modified>2017-04-11T14:55:36.762</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\107x107.png">
+      <PackagePath>Assets\107x107.png</PackagePath>
+      <Modified>2017-04-11T14:39:28.807</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\142x142.png">
+      <PackagePath>Assets\142x142.png</PackagePath>
+      <Modified>2017-04-11T14:37:18.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\150x150.png">
+      <PackagePath>Assets\150x150.png</PackagePath>
+      <Modified>2017-04-11T14:30:42.945</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\188x188.png">
+      <PackagePath>Assets\188x188.png</PackagePath>
+      <Modified>2017-04-11T14:32:00.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.png">
+      <PackagePath>Assets\200x200.png</PackagePath>
+      <Modified>2017-04-11T14:50:44.792</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.scale-100.png">
+      <PackagePath>Assets\200x200.scale-100.png</PackagePath>
+      <Modified>2017-04-11T14:58:50.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.scale-125.png">
+      <PackagePath>Assets\200x200.scale-125.png</PackagePath>
+      <Modified>2017-04-11T14:57:05.637</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.scale-150.png">
+      <PackagePath>Assets\200x200.scale-150.png</PackagePath>
+      <Modified>2017-04-11T14:56:32.132</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.scale-200.png">
+      <PackagePath>Assets\200x200.scale-200.png</PackagePath>
+      <Modified>2017-04-11T14:55:36.762</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\200x200.scale-400.png">
+      <PackagePath>Assets\200x200.scale-400.png</PackagePath>
+      <Modified>2017-04-11T14:50:44.792</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\225x225.png">
+      <PackagePath>Assets\225x225.png</PackagePath>
+      <Modified>2017-04-11T14:34:03.094</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\255x255.png">
+      <PackagePath>Assets\255x255.png</PackagePath>
+      <Modified>2017-04-11T14:31:26.959</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\284x284.png">
+      <PackagePath>Assets\284x284.png</PackagePath>
+      <Modified>2017-04-11T14:36:48.757</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\300x300.png">
+      <PackagePath>Assets\300x300.png</PackagePath>
+      <Modified>2017-04-11T14:30:01.322</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\50x50.png">
+      <PackagePath>Assets\50x50.png</PackagePath>
+      <Modified>2017-04-11T14:58:50.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\600x600.png">
+      <PackagePath>Assets\600x600.png</PackagePath>
+      <Modified>2017-04-11T14:23:38.826</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\63x63.png">
+      <PackagePath>Assets\63x63.png</PackagePath>
+      <Modified>2017-04-11T14:57:05.637</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\70x70.png">
+      <PackagePath>Assets\70x70.png</PackagePath>
+      <Modified>2017-04-11T14:39:16.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\71x71.png">
+      <PackagePath>Assets\71x71.png</PackagePath>
+      <Modified>2017-04-11T14:41:30.978</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\75x75.png">
+      <PackagePath>Assets\75x75.png</PackagePath>
+      <Modified>2017-04-11T14:56:32.132</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\89x89.png">
+      <PackagePath>Assets\89x89.png</PackagePath>
+      <Modified>2017-04-11T14:39:21.330</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Logo1.png">
       <PackagePath>Assets\Logo1.png</PackagePath>
       <Modified>2017-03-30T16:38:49.204</Modified>
@@ -464,6 +552,51 @@
       <PackagePath>Assets\Logo3.png</PackagePath>
       <Modified>2017-03-30T16:55:45.531</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:30:42.945</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:32:00.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:34:03.094</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:23:38.826</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:58:40.496</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:57:05.637</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:56:32.132</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:55:36.762</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-04-11T14:50:44.792</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2015-09-20T17:30:08.000</Modified>
@@ -476,7 +609,7 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
+      <Modified>2017-04-11T14:30:01.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
@@ -485,11 +618,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T17:30:08.000</Modified>
     </AppxPackagedFile>
@@ -513,11 +641,11 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-09T20:23:02.991</Modified>
+      <Modified>2017-04-11T16:25:40.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\Budgie.exe">
       <PackagePath>Budgie.exe</PackagePath>
-      <Modified>2017-04-11T01:08:12.233</Modified>
+      <Modified>2017-04-11T16:30:35.587</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

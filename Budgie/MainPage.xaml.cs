@@ -17,6 +17,8 @@ using System.IO.IsolatedStorage;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Budgie.Model;
+using Windows.Devices.Geolocation;
+using Windows.Media.SpeechSynthesis;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,7 +29,6 @@ namespace Budgie
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
         public MainPage()
         {
             this.InitializeComponent();
@@ -49,6 +50,10 @@ namespace Budgie
 
                 if (budgetFile.FileType == ".txt")
                 {
+                    MediaElement mediaElement = new MediaElement();
+                    var synth = new SpeechSynthesizer();
+
+
                     List<string> welcomes = new List<string>();
                     welcomes.Add("Polly wants a penny!");
                     welcomes.Add("Quak! Oh it's you again..");
@@ -65,8 +70,64 @@ namespace Budgie
                     int randomNumber = random.Next(0, 3);
 
                     welcomeMessage.Text = welcomes[randomNumber];
+                    SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(welcomes[randomNumber]);
+                    mediaElement.SetSource(stream, stream.ContentType);
+                    mediaElement.Play();
 
-                   
+                    try
+                    {
+                        var transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
+                        var buffer = await FileIO.ReadLinesAsync(transactionsFile);
+                        Transaction transaction = new Transaction();
+                        int lineNo = 0;
+
+                        for (int i = 0; i <= buffer.Count - 1; i++)
+                        {
+
+                            if (lineNo == 0)
+                            {
+                                transaction.transactionType = "" + buffer[i];
+
+                                lineNo++;
+                            }
+                            else if (lineNo == 1)
+                            {
+                                transaction.transactionAmount = double.Parse(buffer[i]);
+
+                                lineNo++;
+                            }
+                            else if (lineNo == 2)
+                            {
+                                transaction.transactionName = "" + buffer[i];
+
+                                lineNo++;
+                            }
+                            else if (lineNo == 3)
+                            {
+                                transaction.transactionDesc = "" + buffer[i];
+
+                                lineNo++;
+                            }
+                            else if (lineNo == 4)
+                            {
+                                transaction.transactionDate = DateTime.Parse(buffer[i]);
+
+                                lineNo++;
+                            }
+                            else if (lineNo == 5)
+                            {
+                                BudgieMain.transactions.Add(transaction);
+                                transaction = new Transaction();
+                                lineNo = 0;
+                            }
+                        }
+
+                    }
+                    catch (Exception E)
+                    {
+
+                    }
+
                     return;
                 }
                 else
