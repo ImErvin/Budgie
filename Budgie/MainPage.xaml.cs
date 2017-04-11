@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using System.IO.IsolatedStorage;
 using Windows.Storage;
 using Windows.UI.Popups;
+using Budgie.Model;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -40,12 +41,65 @@ namespace Budgie
         
         private async void checkLocalStorage()
         {
-            List<string> welcomes = new List<string>();
-            welcomes.Add("Polly wants a cracker!");
-            welcomes.Add("Quak! Oh it's you again..");
-            welcomes.Add("You're spending too much money!");
-            welcomes.Add("Welcome back");
             StorageFile budgetFile;
+            StorageFile transactionsFile;
+
+            try
+            {
+                transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
+                var buffer = await FileIO.ReadLinesAsync(transactionsFile);
+                Transaction transaction = new Transaction();
+                int inc = 0;
+
+                for (int i = 0; i <= buffer.Count - 1; i++)
+                {
+
+                    if (inc == 0)
+                    {
+                        transaction.transactionType = "" + buffer[i];
+
+                        inc++;
+                    }
+                    else if (inc == 1)
+                    {
+                        transaction.transactionAmount = double.Parse(buffer[i]);
+
+                        inc++;
+                    }
+                    else if (inc == 2)
+                    {
+                        transaction.transactionName = "" + buffer[i];
+
+                        inc++;
+                    }
+                    else if (inc == 3)
+                    {
+                        transaction.transactionDesc = "" + buffer[i];
+
+                        inc++;
+                    }
+                    else if (inc == 4)
+                    {
+                        transaction.transactionDate = DateTime.Parse(buffer[i]);
+
+                        inc++;
+                    }
+                    else if (inc == 5)
+                    {
+
+                        BudgieMain.transactions.Add(transaction);
+                        inc = 0;
+                        await new MessageDialog("" + transaction.transactionAmount).ShowAsync();
+                    }
+                }
+
+            }
+            catch (Exception E)
+            {
+
+            }
+
+
 
             try
             {
@@ -53,12 +107,24 @@ namespace Budgie
 
                 if (budgetFile.FileType == ".txt")
                 {
+                    List<string> welcomes = new List<string>();
+                    welcomes.Add("Polly wants a penny!");
+                    welcomes.Add("Quak! Oh it's you again..");
+                    welcomes.Add("You're spending too much money!");
+                    welcomes.Add("Welcome baa.. *Sigh* Just click the damn button..");
+                    welcomes.Add("Quaakk! I hate my job!");
+
                     letStart.Visibility = Visibility.Collapsed;
                     continueButton.Visibility = Visibility.Visible;
+
+                    App.balance = double.Parse(await FileIO.ReadTextAsync(budgetFile));
+
                     Random random = new Random();
                     int randomNumber = random.Next(0, 3);
 
                     welcomeMessage.Text = welcomes[randomNumber];
+
+                   
                     return;
                 }
                 else
@@ -66,9 +132,9 @@ namespace Budgie
                     return;
                 }
             }
-            catch
+            catch(Exception E)
             {
-
+                await new MessageDialog(E.Message).ShowAsync();
             }
 
         }

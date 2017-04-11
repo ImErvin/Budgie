@@ -53,9 +53,6 @@ namespace Budgie.Views
                 {
                     await new MessageDialog(error.Message).ShowAsync();
                 }
-                
-
-                
 
                 this.Frame.Navigate(typeof(BudgieMain));
             }

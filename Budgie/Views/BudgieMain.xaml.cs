@@ -27,12 +27,13 @@ namespace Budgie.Views
     public sealed partial class BudgieMain : Page
     {
         private int balanceEditControlVaraible;
-        private List<Transaction> transactions = new List<Transaction>();
+        public static List<Transaction> transactions = new List<Transaction>();
 
         public BudgieMain()
         {
             this.InitializeComponent();
-            this.loadBalanceFromStorage();
+            //this.loadBalanceFromStorage();
+            this.loadBalance();
             this.loadPage();
         }
 
@@ -74,7 +75,7 @@ namespace Budgie.Views
             showLogs();
         }
 
-        private void showLogs()
+        private async void showLogs()
         {
             //List<string> log = new List<string>();
             List<string> logList = new List<string>();
@@ -82,28 +83,16 @@ namespace Budgie.Views
             foreach (var transaction in transactions)
             {
                 logList.Add(transaction.ToString());
+
             }
 
             logList.Reverse();
             logs.DataContext = logList;
 
-            /*
-            foreach (string log in logs.Items)
-            {
-                if (log.Contains("Expense"))
-                {
-                    logs.Items[i].Background = new SolidColorBrush(GetSolidColorBrush("#FFe8465a").Color);
-                }
-                else
-                {
-                    result.Background = new SolidColorBrush(GetSolidColorBrush("#FF77ce6f").Color);
-                }
-            }*/
-            
-            //logs.DataContext = log;
+
         }
         
-        private void addLog(string transactionType, string transactionName, string transactionDesc, double transactionAmount)
+        private async void addLog(string transactionType, string transactionName, string transactionDesc, double transactionAmount)
         { 
             if(transactionName == "" && transactionDesc == "")
             {
@@ -121,12 +110,36 @@ namespace Budgie.Views
             Transaction transaction = new Transaction()
             {
                 transactionType = transactionType,
-                trasnactionName = transactionName,
+                transactionName = transactionName,
                 transactionDesc = transactionDesc,
                 transactionAmount = transactionAmount,
                 transactionDate = DateTime.Now
             };
             transactions.Add(transaction);
+
+            try
+            {
+                var transactionsFile = await App.localStorageFolder.GetFileAsync("transactions.txt");
+
+                await FileIO.WriteTextAsync(transactionsFile, "");
+
+                foreach (Transaction log in transactions)
+                {
+                    await new MessageDialog("" + log.transactionAmount).ShowAsync();
+                    await FileIO.AppendTextAsync(transactionsFile, log.ToFile());
+                }
+            }
+            catch
+            {
+                var transactionsFile = await App.localStorageFolder.CreateFileAsync("transactions.txt");
+
+                await FileIO.WriteTextAsync(transactionsFile, "");
+
+                foreach (Transaction log in transactions)
+                {
+                    await FileIO.AppendTextAsync(transactionsFile, log.ToFile());
+                }
+            }
         }
 
         private void populateBalanceEdit(string editType)
@@ -190,7 +203,7 @@ namespace Budgie.Views
             }
             catch
             {
-                errorMessage.Text = "Please enter a number value";
+                errorMessage.Text = "Quak.. '" + balanceEditTextBox.Text + "' is not a number."; ;
             }
         }
 
