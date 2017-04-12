@@ -85,9 +85,8 @@ namespace Budgie
                     return;
                 }
             }
-            catch(Exception E)
+            catch
             {
-                await new MessageDialog(E.Message).ShowAsync();
             }
 
         }
@@ -183,13 +182,13 @@ namespace Budgie
         }
 
         // Button to navigate to the main user interface.
-        private void continueButton_Click(object sender, RoutedEventArgs e)
+        private void continueButton_Tapped(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BudgieMain));
         }
 
         // Button to navigate to the second welcome view.
-        private void letStart_Click(object sender, RoutedEventArgs e)
+        private void letStart_Tapped(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BudgieInitial));
         }

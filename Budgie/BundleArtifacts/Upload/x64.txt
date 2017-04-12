@@ -1,0 +1,2 @@
+MainPackage=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x64\Release\Upload\Budgie_1.1.1.0_x64.appx
+SymbolPackage=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\AppPackages\Budgie_1.1.1.0\Budgie_1.1.1.0_x64.appxsym

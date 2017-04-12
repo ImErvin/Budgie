@@ -17,7 +17,7 @@
             <TextBlock x:ConnectionId='3' x:Name="errorMessage" Foreground="#e8465a"></TextBlock>
             <TextBlock>Enter your current balance</TextBlock>
             <TextBox x:ConnectionId='4' x:Name="welcomeBalance" ></TextBox>
-            <Button x:ConnectionId='5' x:Name="welcomeSaveBalance"                                   Margin="0,5,0,0" Background="#77ce6f" Width="200">Start Saving</Button>
+            <Button x:ConnectionId='5' x:Name="welcomeSaveBalance"                                    Margin="0,5,0,0" Background="#77ce6f" Width="200">Start Saving</Button>
         </StackPanel>
     </Grid>
 </Page>

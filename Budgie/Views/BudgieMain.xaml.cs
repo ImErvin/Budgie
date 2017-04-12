@@ -209,21 +209,21 @@ namespace Budgie.Views
         }
 
         // Tap event for expense button
-        private void newExpense_Click(object sender, RoutedEventArgs e)
+        private void newExpense_Tapped(object sender, RoutedEventArgs e)
         {
             populateBalanceEdit("Spend");
             balanceEditControlVaraible = 1;
         }
 
         // Tap event for expense button
-        private void newIncome_Click(object sender, RoutedEventArgs e)
+        private void newIncome_Tapped(object sender, RoutedEventArgs e)
         {
             populateBalanceEdit("Save");
             balanceEditControlVaraible = 2;
         }
 
         // Tap event for the balanceEditButton
-        private void balanceEditAction_Click(object sender, RoutedEventArgs e)
+        private void balanceEditAction_Tapped(object sender, RoutedEventArgs e)
         {
             string transactionType;
 
@@ -280,13 +280,13 @@ namespace Budgie.Views
         }
 
         // Back button tap event, will reset the page to default view
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        private void backButton_Tapped(object sender, RoutedEventArgs e)
         {
             loadPage();
         }
 
         // openLogs button tap event
-        private void openLogs_Click(object sender, RoutedEventArgs e)
+        private void openLogs_Tapped(object sender, RoutedEventArgs e)
         {
             // Loads the logs listview item
             showLogs();

@@ -59,7 +59,7 @@ namespace Budgie.Views
         }
 
         // welcomeSaveButton tap event to save the balance.
-        private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
+        private void welcomeSaveBalance_Tapped(object sender, RoutedEventArgs e)
         {
 
             try

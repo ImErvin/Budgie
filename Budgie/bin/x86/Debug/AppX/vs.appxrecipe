@@ -9,32 +9,32 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec2431b0-77b0-42d2-8267-30f37dd603ff</PackageIdentityName>
-    <PackageIdentityPublisher>CN=Ervii</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=DFF29439-53A7-4B8E-86D9-76827818F193</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>7D1D71B119E917A3263486A87F01666A9F6BEE58E40962A551DB067B9AFB2131</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>ec2431b0-77b0-42d2-8267-30f37dd603ff_1.0.0.0_x86__tmv6z44nw3k10</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>ec2431b0-77b0-42d2-8267-30f37dd603ff_tmv6z44nw3k10!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>ec2431b0-77b0-42d2-8267-30f37dd603ff</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=Ervii</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredManifestChecksum>F5F98C8D20C759763FF8C26EFB7F01410F48F313A32220D05A5DD4BC646BA941</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>59573Erv.Budgie_1.1.1.0_x86__869qcyxha79m4</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>59573Erv.Budgie_869qcyxha79m4!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>59573Erv.Budgie</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=DFF29439-53A7-4B8E-86D9-76827818F193</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.1.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T23:10:57.563</Modified>
+      <Modified>2017-04-12T04:16:20.974</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.exe">
       <PackagePath>entrypoint\Budgie.exe</PackagePath>
-      <Modified>2017-04-11T23:10:54.496</Modified>
+      <Modified>2017-04-12T04:16:15.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -532,6 +532,10 @@
       <PackagePath>Assets\75x75.png</PackagePath>
       <Modified>2017-04-11T14:56:32.132</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\88x88.png">
+      <PackagePath>Assets\88x88.png</PackagePath>
+      <Modified>2017-04-12T02:28:34.227</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\89x89.png">
       <PackagePath>Assets\89x89.png</PackagePath>
       <Modified>2017-04-11T14:39:21.330</Modified>
@@ -604,7 +608,7 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
+      <Modified>2017-04-12T01:40:43.737</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
@@ -614,17 +618,17 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
+      <Modified>2017-04-12T02:30:21.355</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
+      <Modified>2017-04-12T02:31:15.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-09-20T17:30:08.000</Modified>
+      <Modified>2017-04-12T02:34:34.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -632,7 +636,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Budgie.xr.xml">
       <PackagePath>Budgie.xr.xml</PackagePath>
-      <Modified>2017-04-09T20:23:00.435</Modified>
+      <Modified>2017-04-12T02:53:02.621</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -641,11 +645,11 @@
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T16:25:40.721</Modified>
+      <Modified>2017-04-12T04:16:18.730</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\x86\Debug\Core\Budgie.exe">
       <PackagePath>Budgie.exe</PackagePath>
-      <Modified>2017-04-11T23:10:57.544</Modified>
+      <Modified>2017-04-12T04:16:20.960</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

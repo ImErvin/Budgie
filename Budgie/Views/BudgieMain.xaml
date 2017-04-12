@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="backButton" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Padding="3" Background="#e5d665" Tapped="backButton_Click">Back</Button>
+        <Button x:Name="backButton" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Padding="3" Background="#e5d665" Tapped="backButton_Tapped">Back</Button>
         <StackPanel x:Name="Header"  VerticalAlignment="Top">
             <Image Source="../assets/Logo3.png" Height="80" Width="85"></Image>
             <TextBlock HorizontalAlignment="Center">Your Balance</TextBlock>
@@ -16,11 +16,11 @@
         </StackPanel>
         <StackPanel x:Name="dashboard" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="newExpense" Background="#e8465a" Tapped="newExpense_Click">New Expense</Button>
-                <Button x:Name="newIncome" Background="#77ce6f" Tapped="newIncome_Click">New Income</Button>
+                <Button x:Name="newExpense" Background="#e8465a" Tapped="newExpense_Tapped">New Expense</Button>
+                <Button x:Name="newIncome" Background="#77ce6f" Tapped="newIncome_Tapped">New Income</Button>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                <Button x:Name="openLogs" Background="#e5d665" Width="211" Tapped="openLogs_Click">Transactions</Button>
+                <Button x:Name="openLogs" Background="#e5d665" Width="211" Tapped="openLogs_Tapped">Transactions</Button>
             </StackPanel>
         </StackPanel>
         <ListView x:Name="logs" Margin="0,140,0,31" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="Auto" ItemsSource="{Binding}">
@@ -34,7 +34,7 @@
             <TextBox x:Name="balanceEditNameBox" PlaceholderText="Optional"></TextBox>
             <TextBlock x:Name="balanceEditDesc">Transaction Description:</TextBlock>
             <TextBox x:Name="balanceEditDescBox" PlaceholderText="Optional"></TextBox>
-            <Button x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0" Tapped="balanceEditAction_Click"></Button>
+            <Button x:Name="balanceEditAction" HorizontalAlignment="Stretch" Margin="0,5,0,0" Tapped="balanceEditAction_Tapped"></Button>
         </StackPanel>
         
         

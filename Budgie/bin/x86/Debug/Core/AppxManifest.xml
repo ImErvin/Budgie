@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="ec2431b0-77b0-42d2-8267-30f37dd603ff" Publisher="CN=Ervii" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="59573Erv.Budgie" Publisher="CN=DFF29439-53A7-4B8E-86D9-76827818F193" Version="1.1.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="ec2431b0-77b0-42d2-8267-30f37dd603ff" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Budgie</DisplayName>
-    <PublisherDisplayName>Ervii</PublisherDisplayName>
+    <PublisherDisplayName>Erv</PublisherDisplayName>
     <Logo>Assets\StoreLogo\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -24,9 +24,13 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="Budgie.exe" EntryPoint="Budgie.App">
-      <uap:VisualElements DisplayName="Budgie" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Budgie" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="Budgie" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Budgie is an interactive budgeting application that allows you to add or subtract from your budget and keep a track of all your transaction logs." BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"></uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec2431b0-77b0-42d2-8267-30f37dd603ff</PackageIdentityName>
-    <PackageIdentityPublisher>CN=Ervii</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=DFF29439-53A7-4B8E-86D9-76827818F193</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
@@ -396,6 +396,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\75x75.png">
       <PackagePath>Assets\75x75.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\88x88.png">
+      <PackagePath>Assets\88x88.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\Assets\89x89.png">
       <PackagePath>Assets\89x89.png</PackagePath>

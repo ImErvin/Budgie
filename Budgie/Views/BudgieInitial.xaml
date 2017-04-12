@@ -17,7 +17,7 @@
             <TextBlock x:Name="errorMessage" Foreground="#e8465a"></TextBlock>
             <TextBlock>Enter your current balance</TextBlock>
             <TextBox x:Name="welcomeBalance" ></TextBox>
-            <Button x:Name="welcomeSaveBalance" Tapped="welcomeSaveBalance_Click" Margin="0,5,0,0" Background="#77ce6f" Width="200">Start Saving</Button>
+            <Button x:Name="welcomeSaveBalance" Tapped="welcomeSaveBalance_Tapped" Margin="0,5,0,0" Background="#77ce6f" Width="200">Start Saving</Button>
         </StackPanel>
     </Grid>
 </Page>

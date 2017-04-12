@@ -1,0 +1,6 @@
+MainPackage=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\bin\ARM\Release\Upload\Budgie_1.1.1.0_ARM.appx
+SymbolPackage=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\AppPackages\Budgie_1.1.1.0\Budgie_1.1.1.0_ARM.appxsym
+ResourcePack=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\_scale-100.appx
+ResourcePack=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\_scale-125.appx
+ResourcePack=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\_scale-150.appx
+ResourcePack=C:\Users\Ervii\OneDrive\documents\visual studio 2015\Projects\Budgie\Budgie\_scale-400.appx
