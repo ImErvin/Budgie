@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Budgie.Model
 {
+    // Transaction object, has 5 member variables, overridden ToString method for displaying content
+    // and a ToFile method for storing to a storagefile. Promotes Object Orientated Design.
     public class Transaction
     {
         public String transactionType { get; set; }

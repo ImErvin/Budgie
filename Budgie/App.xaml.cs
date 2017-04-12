@@ -28,8 +28,22 @@ namespace Budgie
     /// </summary>
     sealed partial class App : Application
     {
-        public static double balance = 0.00;
+        // App Global variable "balance", This is app global so I can use it in multiple views.
+        // Set as private with getter and setter methods to promote encapsulation.
+        private static double balance;
 
+        public static double getBalance()
+        {
+            return balance;
+        }
+
+        public static void setBalance(double balanceIn)
+        {
+            balance = balanceIn;
+        }
+
+        // App global storagefolder for localstorage. Made it app global so multiple views can use the
+        // same folder to save localstorage files.
         public static StorageFolder localStorageFolder = ApplicationData.Current.LocalFolder;
 
         /*public static double getBalance()

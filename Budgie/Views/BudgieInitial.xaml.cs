@@ -23,53 +23,84 @@ using Windows.UI.Xaml.Navigation;
 namespace Budgie.Views
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// This is the secondary welcome view. The user is only going to navigate once their whole time on the app (unless they delete their 
+    /// localstorage cache).
+    /// 
+    /// This page is used to start up the app by asking the user to enter their current balance, it will save that balance to a file and set it as the global balance.
+    /// Once a balance is succesfully entered, the user is brought to the main (BudgieMain) view.
     /// </summary>
     public sealed partial class BudgieInitial : Page
     {
         public BudgieInitial()
         {
             this.InitializeComponent();
+            // Load the balance on startup
             this.loadBalance();
         }
 
+        // Function to laod the balance by using the getBalance method.
         private void loadBalance()
         {
-            yourBalance.Text = "" + App.balance;
+            yourBalance.Text = "" + App.getBalance();
         }
 
-        private async void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
+        // Function to save the balance to a file
+        private async void storeBalance()
+        {
+            try
+            {
+                var budgetFile = await App.localStorageFolder.CreateFileAsync("budgetFile.txt");
+                await FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
+            }
+            catch (Exception error)
+            {
+                await new MessageDialog(error.Message).ShowAsync();
+            }
+        }
+
+        // welcomeSaveButton tap event to save the balance.
+        private void welcomeSaveBalance_Click(object sender, RoutedEventArgs e)
         {
 
             try
             {
-                App.balance = double.Parse(welcomeBalance.Text);
-                yourBalance.Text = "" + App.balance;
+                App.setBalance(double.Parse(welcomeBalance.Text));
+                yourBalance.Text = "" + App.getBalance();
 
-                try
-                {
-                    var budgetFile = await App.localStorageFolder.CreateFileAsync("budget.txt");
-                    await FileIO.WriteTextAsync(budgetFile, welcomeBalance.Text);
-                }
-                catch (Exception error)
-                {
-                    await new MessageDialog(error.Message).ShowAsync();
-                }
+                storeBalance();
 
+                // Navigate to the main frame if completed successfully.
                 this.Frame.Navigate(typeof(BudgieMain));
             }
             catch
             {
-                MediaElement mediaElement = new MediaElement();
-                var synth = new SpeechSynthesizer();
-                string error = "Quak.. '" + welcomeBalance.Text + "' is not a number.";
+                // Error handling.
+                string error = string.Empty;
+
+                if (welcomeBalance.Text == string.Empty)
+                {
+                    error = "Hey, try entering in a number!";
+                }
+                else
+                {
+                    error = "Sigh, '" + welcomeBalance.Text + "' is not a number.";
+                }
 
                 errorMessage.Text = error;
-
-                SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(error);
-                mediaElement.SetSource(stream, stream.ContentType);
-                mediaElement.Play();
+                textToSpeechMessage(error);
             }
+        }
+
+        // Function to pass in a string and use SpeechSynthesisStream to read out the string as a sound.
+        // Used for calling out error messages, welcome messages, or sarcastic comments to the user. Promotes User Experience.
+        private async void textToSpeechMessage(string message)
+        {
+            MediaElement mediaElement = new MediaElement();
+            var synth = new SpeechSynthesizer();
+
+            SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(message);
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
         }
     }
 }
