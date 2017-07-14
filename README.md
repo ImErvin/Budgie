@@ -30,3 +30,8 @@
   | Publisher : | Erv           | 
   | Application : | Budgie        |
   | | |
+  
+* #### Download and Screenshots available on Windows Store
+
+  [Click here to see Budgie on the Windows Store!](https://www.microsoft.com/en-ie/store/p/budgie/9msn75kq3swv?rtc=1
+)
